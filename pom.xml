@@ -49,6 +49,12 @@
             <artifactId>reactive-streams-tck</artifactId>
             <version>${reactive.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.projectreactor/reactor-core -->
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>3.1.2.RELEASE</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

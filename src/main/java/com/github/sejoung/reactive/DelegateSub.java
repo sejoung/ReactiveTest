@@ -3,10 +3,10 @@ package com.github.sejoung.reactive;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
-public class DelegateSub implements Subscriber<Integer> {
+public class DelegateSub<T,R> implements Subscriber<T> {
     Subscriber sub;
 
-    public DelegateSub(Subscriber sub){
+    public DelegateSub(Subscriber<? super R> sub){
         this.sub = sub;
     }
     @Override
@@ -15,8 +15,8 @@ public class DelegateSub implements Subscriber<Integer> {
     }
 
     @Override
-    public void onNext(Integer integer) {
-        sub.onNext(integer);
+    public void onNext(T t) {
+        sub.onNext(t);
     }
 
     @Override
