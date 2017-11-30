@@ -6,6 +6,11 @@
     <groupId>com.github.sejoung</groupId>
     <artifactId>reactive</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+    </parent>
     <properties>
         <java-version>1.9</java-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -54,6 +59,10 @@
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-core</artifactId>
             <version>3.1.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
     <build>
