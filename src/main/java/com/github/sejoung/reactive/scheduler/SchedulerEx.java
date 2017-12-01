@@ -1,4 +1,4 @@
-package com.github.sejoung.reactive;
+package com.github.sejoung.reactive.scheduler;
 
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
