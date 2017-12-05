@@ -24,6 +24,9 @@ public class SpringTobyTv009Application {
 
 
     public static void main(String[] args) throws Exception {
+        System.setProperty("SERVER_PORT","");
+
+
         SpringApplication.run(SpringTobyTv009Application.class, args);
     }
 
