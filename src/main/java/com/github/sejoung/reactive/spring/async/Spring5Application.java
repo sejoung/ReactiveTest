@@ -1,7 +1,6 @@
 
-package com.github.sejoung.reactive.spring;
+package com.github.sejoung.reactive.spring.async;
 
-import com.github.sejoung.reactive.future.FutureEx;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +9,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 import org.springframework.util.concurrent.ListenableFuture;
-
-import java.util.concurrent.Future;
 
 /**
  * @author kim se joung
