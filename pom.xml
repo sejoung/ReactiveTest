@@ -20,6 +20,8 @@
         <junit.version>4.12</junit.version>
         <slf4j.version>1.7.7</slf4j.version>
         <reactor.version>3.1.2.RELEASE</reactor.version>
+        <kafka.version>1.0.0</kafka.version>
+        <netty.version>4.1.18.Final</netty.version>
     </properties>
     <repositories>
         <repository>
@@ -32,6 +34,19 @@
         </repository>
     </repositories>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>${netty.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>

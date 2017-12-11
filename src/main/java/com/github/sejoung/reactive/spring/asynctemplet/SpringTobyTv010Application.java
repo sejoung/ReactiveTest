@@ -1,6 +1,7 @@
 
-package com.github.sejoung.reactive.spring.loadtest;
+package com.github.sejoung.reactive.spring.asynctemplet;
 
+import com.github.sejoung.reactive.spring.loadtest.SpringTobyTv009Application;
 import io.netty.channel.nio.NioEventLoopGroup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.Netty4ClientHttpRequestFactory;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.concurrent.ListenableFuture;
@@ -26,10 +26,8 @@ import org.springframework.web.context.request.async.DeferredResult;
  * @author kim se joung
  */
 @SpringBootApplication
-@EnableAsync
-public class SpringTobyTv009Application {
-    private static final Logger log = LoggerFactory.getLogger(SpringTobyTv009Application.class);
-
+public class SpringTobyTv010Application {
+    private static final Logger log = LoggerFactory.getLogger(SpringTobyTv010Application.class);
 
     static final String URL1 = "http://localhost:8081/service?req={req}";
     static final String URL2 = "http://localhost:8081/service2?req={req}";
@@ -41,7 +39,7 @@ public class SpringTobyTv009Application {
         AsyncRestTemplate rt = new AsyncRestTemplate(new Netty4ClientHttpRequestFactory(new NioEventLoopGroup(1)));
 
         @Autowired
-        MyService myService;
+        SpringTobyTv009Application.MyService myService;
 
         @GetMapping("/rest")
         public DeferredResult<String> rest(int idx) {
@@ -91,7 +89,7 @@ public class SpringTobyTv009Application {
 
     public static void main(String[] args) throws Exception {
 
-        SpringApplication.run(SpringTobyTv009Application.class, args);
+        SpringApplication.run(SpringTobyTv010Application.class, args);
     }
 
 

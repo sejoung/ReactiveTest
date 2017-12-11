@@ -14,35 +14,21 @@ public class LoadTest {
     private static final Logger log = LoggerFactory.getLogger(LoadTest.class);
 
     public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
-
         int cnt = 100;
-
-
         ExecutorService es = Executors.newFixedThreadPool(cnt);
-
-
         RestTemplate rt = new RestTemplate();
-
         String url = "http://localhost:8080/rest?idx={idx}";
-
-
         CyclicBarrier barrier = new CyclicBarrier(cnt);
-        
         for (int i = 0; i < cnt ; i++) {
             es.submit(()->{
                 int idx = counter.addAndGet(1);
-
                 barrier.await();
                 log.info("Thread {}",idx);
-
                 StopWatch sw = new StopWatch();
                 sw.start();
-
                 String res = rt.getForObject(url,String.class,idx);
-
                 sw.stop();
                 log.info("Elapsed : {} {} / {}",idx,sw.getTotalTimeSeconds(),res);
-
                 return null;
             });
         }
@@ -50,7 +36,7 @@ public class LoadTest {
         StopWatch main = new StopWatch();
         main.start();
 
-        es.shutdown();
+        es.shutdownNow();
         es.awaitTermination(100, TimeUnit.SECONDS);
 
         main.stop();
