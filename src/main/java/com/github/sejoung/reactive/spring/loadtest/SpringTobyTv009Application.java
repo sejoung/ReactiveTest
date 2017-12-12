@@ -84,7 +84,7 @@ public class SpringTobyTv009Application {
         ThreadPoolTaskExecutor te = new ThreadPoolTaskExecutor();
 
         te.setCorePoolSize(1);
-        te.setMaxPoolSize(1);
+        te.setMaxPoolSize(10);
         te.initialize();
         return te;
     }
