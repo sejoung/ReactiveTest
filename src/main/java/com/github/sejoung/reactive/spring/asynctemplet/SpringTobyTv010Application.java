@@ -39,7 +39,7 @@ public class SpringTobyTv010Application {
         AsyncRestTemplate rt = new AsyncRestTemplate(new Netty4ClientHttpRequestFactory(new NioEventLoopGroup(1)));
 
         @Autowired
-        SpringTobyTv009Application.MyService myService;
+        MyService myService;
 
         @GetMapping("/rest")
         public DeferredResult<String> rest(int idx) {
@@ -87,7 +87,7 @@ public class SpringTobyTv010Application {
         return te;
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         SpringApplication.run(SpringTobyTv010Application.class, args);
     }

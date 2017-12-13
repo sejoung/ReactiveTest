@@ -16,19 +16,19 @@ public class RemoteService {
     public static class MyController {
 
         @GetMapping("/service")
-        public String rest(String req) throws InterruptedException {
+        public String rest(String req) {
            // Thread.sleep(2000);
             return req+"/service";
         }
 
         @GetMapping("/service2")
-        public String rest2(String req) throws InterruptedException {
+        public String rest2(String req) {
            // Thread.sleep(2000);
             return req+"/service2";
         }
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         System.setProperty("server.port","8081");
         System.setProperty("server.tomcat.max-threads","1000");
 

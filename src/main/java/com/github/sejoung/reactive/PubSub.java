@@ -18,7 +18,7 @@ public class PubSub {
         Iterable<Integer> iter = Arrays.asList(1, 2, 3, 4, 5);
         ExecutorService es = Executors.newSingleThreadExecutor();
 
-        Publisher<Integer> p = new Publisher<Integer>() {
+        Publisher<Integer> p = new Publisher<>() {
             @Override
             public void subscribe(Subscriber subscriber) {
                 Iterator<Integer> it = iter.iterator();
@@ -55,7 +55,7 @@ public class PubSub {
         };
 
 
-        Subscriber<Integer> s = new Subscriber<Integer>() {
+        Subscriber<Integer> s = new Subscriber<>() {
             Subscription subscription;
 
             @Override
@@ -68,13 +68,13 @@ public class PubSub {
 
             @Override
             public void onNext(Integer integer) {
-                System.out.println(Thread.currentThread().getName()+" onNext " + integer);
+                System.out.println(Thread.currentThread().getName() + " onNext " + integer);
                 this.subscription.request(1);
             }
 
             @Override
             public void onError(Throwable throwable) {
-                System.out.println("onError "+throwable.getMessage());
+                System.out.println("onError " + throwable.getMessage());
             }
 
             @Override

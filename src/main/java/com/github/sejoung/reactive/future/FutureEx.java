@@ -18,9 +18,8 @@ public class FutureEx {
 
         CallbackFutureTask f = new CallbackFutureTask(() -> {
             Thread.sleep(2000);
-            if(1 == 1) throw new RuntimeException("Async Error");
-            log.debug("async");
-            return "hello";
+            throw new RuntimeException("Async Error");
+
         },
           s -> log.debug(s),
                 e -> log.debug(e.getMessage())

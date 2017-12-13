@@ -19,10 +19,10 @@ public class TestCode {
                 int idx = ai.addAndGet(1);
                 cb.await();
                 FreqABTest cTest = new FreqABTest();        /// C
-                cTest.setFreqAbtestType(idx);
+                FreqABTest.setFreqAbtestType(idx);
 
-                if ((idx != cTest.getFreqAbtestType())) {
-                    System.out.println(" idx " + idx + " freqAbtestType " + cTest.getFreqAbtestType());
+                if ((idx != FreqABTest.getFreqAbtestType())) {
+                    System.out.println(" idx " + idx + " freqAbtestType " + FreqABTest.getFreqAbtestType());
                 }
                 return null;
             });

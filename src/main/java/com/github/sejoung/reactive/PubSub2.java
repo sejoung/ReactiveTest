@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 public class PubSub2 {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         //Operators
         // Publisher -> Data1 -> Operator1 -> Data2 -> Operator2 -> Data3 -> Subscriber
         // map (d1 -> d2)
