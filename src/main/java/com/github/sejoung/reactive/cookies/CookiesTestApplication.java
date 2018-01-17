@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 
 @SpringBootApplication
 public class CookiesTestApplication {
@@ -16,8 +17,20 @@ public class CookiesTestApplication {
 
         @GetMapping("/rest")
         public String rest(@CookieValue("TEST") String testCookie) {
-            System.out.println("ok "+testCookie);
-            return "ok";
+            System.out.println("ok " + testCookie);
+            return "test";
+        }
+
+        @GetMapping("/test")
+        public void rest1(HttpServletResponse response) {
+            response.addCookie(new Cookie("test", "test"));
+
+        }
+
+        @GetMapping("/test2")
+        public void rest2(HttpServletResponse response) {
+            response.addCookie(new Cookie("test2", "test2"));
+
         }
 
     }

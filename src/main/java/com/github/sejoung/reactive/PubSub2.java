@@ -24,6 +24,21 @@ public class PubSub2 {
 
         reducePub.subscribe(logSub());
 
+        abc:{
+            System.out.println("1");
+            if(2==1)
+            break abc;
+            System.out.println("2");
+
+        }
+
+        if (2 ==1){
+
+        }else for (int i=0 ; i<10 ; i++){
+
+            System.out.println(i);
+        }
+
     }
 
     private static <T,R> Publisher<R> reducePub(Publisher<T> pub, R init, BiFunction<R, T, R> bf) {
