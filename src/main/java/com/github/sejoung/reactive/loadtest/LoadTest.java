@@ -14,11 +14,11 @@ public class LoadTest {
     private static final Logger log = LoggerFactory.getLogger(LoadTest.class);
 
     public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
-        int cnt = 100;
+        int cnt = 1000;
         ExecutorService es = Executors.newFixedThreadPool(cnt);
 
         RestTemplate rt = new RestTemplate();
-        String url = "http://localhost:8080/rest?idx={idx}";
+        String url = "http://localhost:8080/rest";
         CyclicBarrier barrier = new CyclicBarrier(cnt);
         for (int i = 0; i < cnt ; i++) {
             es.submit(()->{
